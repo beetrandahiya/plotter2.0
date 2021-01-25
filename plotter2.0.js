@@ -1,5 +1,5 @@
-function plot(){
-    funcinp=document.getElementById("funcinp").value;
+function plotgraph(){
+    funcinp=document.getElementById("inputfunc").value;
     funcinp.trim();
     var dataset=[];
     var dmnstart=parseInt(document.getElementById("dmnstart").value);
@@ -43,7 +43,7 @@ function plot(){
         
         data: [{
             type: "spline",
-            lineThickness: 3,
+            lineThickness: 2,
             color: "rgba(255,215,0,0.9)", //change later
             dataPoints: dataset
         }]

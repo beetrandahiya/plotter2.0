@@ -1,17 +1,133 @@
-#main{
+body{
+    background-color: #fcfcfc;
     display:grid;
-    grid-template-columns: 25% 75%;
+    grid-template-columns:30% 70%;
+    padding:0px;
+}
+#colorthing{
+    padding:10px;
+    display:grid;
+    grid-template-columns:30% 50%;
     
-    height:100%;
+}
+
+#color_select{
+    background-color: #ffffff;
+    padding:0px;
+    
+    width: 60%;
+    cursor:pointer;
+    outline:none;
+    margin:15px;
+    border: none;
+
+}
+#inputfunc{
+    width:74%;
     margin:0;
-    padding:0;
-    margin:2%
+    text-align:left;
+    border-radius:8px;
+    padding:10%;
+    outline:none;
+    font-size:large;
+    border: 3px solid rgba(110,255,255,0.18);
+    transition:all 200ms;
+    transition-timing-function: ease-in-out;
 }
-#controls input{
-    padding:2%;
+#inputfunc:hover{
+    border: 3px solid rgba(110,255,255,0.5);
+
 }
+#inputfunc:focus{
+    border: 3px solid rgba(110,255,255,0.5);
+}
+
+#dmnstart,#dmnend{
+    border-style:none;
+    outline:none;
+    width:20%;
+    text-align:center;
+    border-radius:8px;
+    margin:5% 0 5% 0;
+    padding:5% 0% 5% 0%;
+    font-size:large;
+    border: 3px solid rgba(110,255,255,0.18); 
+    transition:all 200ms;
+    transition-timing-function: ease-in-out;   
+}
+#dmnstart:hover{
+    border: 3px solid rgba(110,255,255,0.5);
+
+}
+#dmnstart:focus{
+    border: 3px solid rgba(110,255,255,0.5);
+}
+#dmnend:hover{
+    border: 3px solid rgba(110,255,255,0.5);
+
+}
+#dmnend:focus{
+    border: 3px solid rgba(110,255,255,0.5);
+}
+@font-face {
+    font-family: GoogleSans;
+    src: url(GoogleSans-Medium.ttf);
+  }
+#dmndiv{
+    text-align:center;
+    font-family: GoogleSans;
+    font-size:25px;
+
+}
+#plotbtn{
+    border:none;
+    border-radius:5px;
+    font-size: 20px;
+    padding:13px;
+    width:24%;
+    margin:10px;
+    background:none;
+    outline:none;
+    cursor: pointer;
+    border: 2.5px solid rgba(167,255,47,0.5);
+    font-family: GoogleSans;
+}
+#plotbtn:hover{
+    background-color:rgba(167, 255, 47,0.8);
+    transition: all 200ms;
+    color:white;
+    transition-timing-function:ease-in-out;
+
+}
+#plotbtn:active{
+    transform: translateY(1px);
+
+}
+#colorbtn{
+    border:none;
+    border-radius:5px;
+    padding:5px;
+    width:130%;
+    outline:none;
+    background:none;
+    cursor: pointer;
+    border: 2.5px solid rgba(167,255,47,0.5);
+    font-family: GoogleSans;
+
+}
+#colorbtn:hover{
+    background-color:rgba(167, 255, 47,0.8);
+    transition: all 200ms;
+    color:white;
+    transition-timing-function:ease-in-out;
+
+}
+#colorbtn:active{
+    transform: translateY(1px);
+
+}
+
 #plotarea{
-    
     background:transparent;
     position: fixed;
     right:3%;
@@ -19,26 +135,60 @@
     
     width:64%;
     height:80%;
-
+    
 }
-#controls{
-    display:flex;
-    position:absolute;
-    left:0;
+#control{
+    background:#ffffff;
     top:0;
-    background-color:#ff00ff;
-    align-items:center;
-    justify-content:center;
-    flex-direction: column;
-    height: 100%;
-}
-.smallinp{
-    width:10%;
-    margin:1%;
-}
-#dmninp{
-    display:flex;
-    align-items:center;
-    justify-content:center;
 
+    display:flex;
+    position: absolute;
+    flex-direction: column;
+    width:30%;
+    height:100%;
+    margin:none;
+    padding:0;
+    
+    justify-content: center;
+    align-items: center;
+
+}
+#inputfunc{
+    height: 30px;
+}
+
+
+@media only screen and (orientation: portrait){
+    #control{
+        width:100%;
+        height:30%;
+        position:fixed;
+        top:0;
+        
+    }
+    #plotbtn{
+        width:16%;
+        font-size:30px;
+    }
+    #colorthing{
+        width:16%;
+        font-size:30px;
+    }
+    #dmnstart,#dmnend{
+        font-size:20px;
+        padding:5% 0% 5% 0%;
+    }
+    #inputfunc_div{
+        width:80%;
+        margin-top: 5%;
+    }
+    #inputfunc{
+        font-size:40px;
+    }
+    #plotarea{
+        width:98%;
+        height:65%;
+        bottom:2.2%;
+
+    }
 }
