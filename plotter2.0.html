@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <script src="canvasjs.min.js"></script>
+    <link rel="stylesheet" href="plotter2.0.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.0.0/math.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <div id="controls">
+            <input type="text" id="funcinp">
+            <button onClick="plot()">plot</button>
+            <div id="dmninp">
+                <input type="text" id="dmnstart" class="smallinp">
+                ≤ x ≤
+                <input type="text" id="dmnend" class="smallinp">
+            </div>
+        </div>
+        <div id="outputs">
+            <div id="plotarea"></div>
+        </div>
+    </div>
+    <script src="plotter2.0.js"></script>
+</body>
+
+</html>

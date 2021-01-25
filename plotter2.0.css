@@ -1,0 +1,44 @@
+#main{
+    display:grid;
+    grid-template-columns: 25% 75%;
+    
+    height:100%;
+    margin:0;
+    padding:0;
+    margin:2%
+}
+#controls input{
+    padding:2%;
+}
+#plotarea{
+    
+    background:transparent;
+    position: fixed;
+    right:3%;
+    bottom:11%;
+    
+    width:64%;
+    height:80%;
+
+}
+#controls{
+    display:flex;
+    position:absolute;
+    left:0;
+    top:0;
+    background-color:#ff00ff;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    height: 100%;
+}
+.smallinp{
+    width:10%;
+    margin:1%;
+}
+#dmninp{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
