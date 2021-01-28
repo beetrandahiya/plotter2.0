@@ -4,6 +4,8 @@ body{
     grid-template-columns:30% 70%;
     padding:0px;
 }
+
+
 #colorthing{
     padding:10px;
     display:grid;
@@ -128,14 +130,13 @@ body{
 }
 
 #plotarea{
-    background:transparent;
+     background:transparent;
     position: fixed;
-    right:3%;
-    bottom:11%;
+    right:-5%;
+    bottom:17%;
     
     width:64%;
     height:80%;
-    
 }
 #control{
     background:#ffffff;

@@ -2,26 +2,28 @@
 
 <head>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
-    <script src="canvasjs.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
     <link rel="stylesheet" href="plotter2.0.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.0.0/math.js"></script>
 </head>
 
 <body>
+    
     <div id="control">
-     <div style="font-family:'GoogleSans', cursive;font-size:30px;" id="inputfunc_div">f(x)=  <input type="text" id="inputfunc"></div>
-     <div id="dmndiv"><input type="text" id="dmnstart"> ≤ x ≤ <input type="text" id="dmnend"></div>
+        <div style="font-family:'GoogleSans', cursive;font-size:30px;" id="inputfunc_div">f(x)= <input type="text"
+                id="inputfunc"></div>
+        <div id="dmndiv"><input type="text" id="dmnstart"> ≤ x ≤ <input type="text" id="dmnend"></div>
 
-      
+
         <button onClick="plotgraph()" id="plotbtn">Plot</button>
-        <div id="colorthing"> <input type="color" id="color_select"><button id="colorbtn" onclick="changecolor()">Change color</button></div>
-    </div>
-    <div id="plotarea"></div>
+
+
+        <div id="plotarea"></div>
 
 
 
-    <script src="plotter2.0.js"></script>
+        <script src="plotter2.0.js"></script>
 
 </body>
 

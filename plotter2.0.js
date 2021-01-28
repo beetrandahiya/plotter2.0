@@ -1,56 +1,107 @@
-function plotgraph(){
-    funcinp=document.getElementById("inputfunc").value;
-    funcinp.trim();
-    var dataset=[];
-    var dmnstart=parseInt(document.getElementById("dmnstart").value);
-     var dmnend=parseInt(document.getElementById("dmnend").value);
+j = -100;
+var pivl = [];
+var pivltr = [];
+while (j < 100) {
+  vl = j * (math.pi) / 2;
+  pivl.push(vl); //making a array containing values of n*pi/2
+  vltr = parseFloat(vl.toFixed(2));
+  pivltr.push(vltr);
+  j++;
+}
+clcktm=0;
 
-    const expr=math.compile(funcinp);
-    const xValues = math.range(dmnstart, dmnend, 0.01).toArray()
-      const yValues = xValues.map(function (x) {
-        return expr.evaluate({x: x})
-      })
-      console.log(xValues);
-      console.log(yValues);
-      let i=0;
-      nval=yValues.length;
-      while(i<nval){
-          dataelement={
-              x:xValues[i],
-              y:yValues[i]
+function plotgraph() {
+  funcinp = document.getElementById("inputfunc").value;
+  funcinp.trim();
 
-          };
-          dataset.push(dataelement);
-          i++;
+  var dmnstart = parseFloat(document.getElementById("dmnstart").value);
+  var dmnend = parseFloat(document.getElementById("dmnend").value);
 
-      }
+  const expr = math.compile(funcinp);
+  let xValues = math.range(dmnstart, dmnend, 0.01).toArray();
+  xValues = xValues.map(a => parseFloat(a.toFixed(2)));
+  i = 0;
+  while (i < xValues.length) {
+    if (pivltr.includes(xValues[i])) {
+      j = pivltr.indexOf(xValues[i]);
+      xValues[i] = pivl[j];
+    }
+    i++;
+  }
+  const yValues = xValues.map(function (x) {
+    return expr.evaluate({
+      x: x
+    })
+  })
 
-    
 
-      window.chart = new CanvasJS.Chart("plotarea",{
-        animationEnabled: true,
-        zoomEnabled: true,
-        backgroundColor: 'rgba(255,255,255,0.3)',
-        zoomType: 'xy',
-        axisX: {
-            gridThickness: 0.5,
-            margin: 20
-        },
-        axisY: {
-            gridThickness: 0.5,
-            margin: 20
-        },
-        
-        data: [{
-            type: "spline",
-            lineThickness: 2,
-            color: "rgba(255,215,0,0.9)", //change later
-            dataPoints: dataset
-        }]
+  /*let i = 0;
+  var dataset = [];
+  nval = yValues.length;
+  while (i < nval) {
+    dataelement = {
+      x: xValues[i],
+      y: yValues[i]
 
-      })
+    };
+    dataset.push(dataelement);
+    i++;
 
-      chart.render();
+  }
+  
 
+  console.log(dataset)*/
+  k = 0;
+  while (k < yValues.length) {
+    if (yValues[k] > (10 ** 15)) {
+      yValues[k] = Infinity;
+    };
+    if (yValues[k] < -(10 ** 15)) {
+      yValues[k] = -Infinity;
+    }
+    k++;
+  }
+
+  var plotline = {
+    x: xValues,
+    y: yValues,
+    type: 'scatter',
+  line: {
+    color: 'rgb(219, 64, 82)'
+  }
+  };
+  var layout = {
+  
+  width: 600,
+  height: 600,
+  margin: {
+    l: 20,
+    r: 20,
+    b: 20,
+    t: 20,
+    pad: 4
+  },
+  paper_bgcolor: '#fcfcfc',
+  plot_bgcolor: '#fcfcfc'
+};
+
+  var data = [plotline];
+if(clcktm==0){
+  Plotly.newPlot('plotarea', data,layout, {displaylogo: false},{responsive: true});
+  clcktm=1;
+}
+else if(clcktm==1){
+    Plotly.animate('plotarea', {
+    data: data
+  }, {
+    transition: {
+      duration: 500,
+      easing: 'cubic-in-out'
+    },
+    frame: {
+      duration: 500
+    }
+  })
+}
 
 }
