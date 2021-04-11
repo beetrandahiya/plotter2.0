@@ -1,0 +1,51 @@
+ #inputfunc{
+    border:none;
+    font-size: 20px;
+    outline:none;
+}
+#plot-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+    position: absolute;
+    top: 75%;
+
+}
+#plotbtn{
+  border: solid 2px rgba(0,112,243,0.5);
+  border-radius: 5px;
+  padding: 0;
+  font-size: 20px;
+  margin-right: 20px;
+  background: none;
+  font-family: 'Artifika', serif;
+  color:rgb(0,112,243);
+  transition: all 300ms;
+  outline:none;
+}
+#plotbtn:hover{
+  cursor: pointer;
+  background-color: rgba(0,112,243,0.8);
+  color:#fff;
+  box-shadow: 0 2px 6px 0 rgba(0,112,243,0.8), 0 3px 10px 0 rgba(255, 255, 255, 0.19);
+
+  }
+  #plotbtn:active{
+    transform:translateY( 1.5px);
+  }
+
+#workspace{
+  background:#fdfcfc;
+}
+#navbarmain{
+  background: #ffffff;
+z-index:9999;
+ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+}
+
+#plotarea{
+  margin-top: 1rem;
+  margin-left:0rem;
+}
