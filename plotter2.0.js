@@ -155,7 +155,7 @@ wrkrng=wrkwdth/60;
 
 
     if (clcktm == 0) {
-        Plotly.newPlot('plotarea', data, layout, { displaylogo: false , responsive: true,modeBarButtonsToRemove: ['select2d', 'lasso2d', 'toggleSpikelines', 'resetScale2d', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'] });
+        Plotly.newPlot('plotarea', data, layout, { displaylogo: false , responsive: true,modeBarButtonsToRemove: ['select2d', 'lasso2d', 'toggleSpikelines', 'autoScale2d', 'hoverClosestCartesian', 'hoverCompareCartesian'] });
         clcktm = 1;
     } else if (clcktm == 1) {
         Plotly.animate('plotarea', {
@@ -223,7 +223,7 @@ function findderivative() {
     data.push(derivline); //adding it into main data
     //  console.log(derivValues);
 
-    Plotly.react('plotarea', data, layout1, {displaylogo: false , responsive: true, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'resetScale2d', 'autoScale2d', 'toggleSpikelines', 'hoverClosestCartesian', 'hoverCompareCartesian'] }); //using Plotly.react becoz its faster , it creates the plot again
+    Plotly.react('plotarea', data, layout1, {displaylogo: false , responsive: true, modeBarButtonsToRemove: ['select2d', 'lasso2d', 'autoScale2d', 'toggleSpikelines', 'hoverClosestCartesian', 'hoverCompareCartesian'] }); //using Plotly.react becoz its faster , it creates the plot again
 
 
 }
